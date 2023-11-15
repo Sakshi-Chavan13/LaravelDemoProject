@@ -15,7 +15,7 @@ npm run dev
 <br>
 
 
-<h3>Admin :<h3>
+<h3>Admin :</h3>
 <br>
 is_admin(column) == 1 then login admin
 <br>

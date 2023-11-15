@@ -21,7 +21,7 @@ is_admin(column) == 1 then login admin
 <br>
 
 1) seeded the admin data using the databaseseeders (seeders/admin.php)
-<br>
+
 2)create a admin middleware - php artisan make:middleware Admin
 <br>
 3) for admin controller : run the following command:

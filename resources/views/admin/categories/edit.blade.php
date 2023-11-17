@@ -17,6 +17,9 @@
         <input type="name" id="title" value="{{ $category->name }}" name="name" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
       </div>
     </div>
+    @error('description')
+      <div class="text-sm text-red-400">{{ $message }}</div>
+    @enderror
     <div class="sm:col-span-6">
       <label for="image" class="block text-sm font-medium text-gray-700"> Post Image </label>
       <div>
@@ -35,6 +38,9 @@
         </textarea>
       </div>
     </div>
+    @error('description')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                            @enderror
     <div class="sm:col-span-6 pt-5">
       
 </div>

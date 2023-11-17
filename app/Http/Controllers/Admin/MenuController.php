@@ -96,7 +96,7 @@ class MenuController extends Controller
             ]);
 
             if($request->has('categories')){
-                $menu->categories()->attach($request->categories);
+                $menu->categories()->sync($request->categories);
             }
     
             return to_route('admin.menus.index');
@@ -108,5 +108,9 @@ class MenuController extends Controller
     public function destroy(string $id)
     {
         //
+        $menu = Menu::find($id);
+        $menu->categories()->detach();
+        $menu->delete();
+        return to_route('admin.menus.index')->with('danger', 'Menu deleted successfully.');;
     }
 }

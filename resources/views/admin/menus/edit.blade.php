@@ -22,9 +22,9 @@
                                 <input type="text" id="name" value="{{ $menu->name }}" name="name"
                                     class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
                             </div>
-                            <!-- @error('name')
+                            @error('name')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
-                            @enderror -->
+                            @enderror
                         </div>
                         <div class="sm:col-span-6">
                             <label for="image" class="block text-sm font-medium text-gray-700"> Image </label>
@@ -35,9 +35,9 @@
                                 <input type="file" id="image" name="image"
                                     class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
                             </div>
-                            <!-- @error('image')
+                            @error('image')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
-                            @enderror -->
+                            @enderror
                         </div>
                         <div class="sm:col-span-6">
                             <label for="price" value="{{ $menu->price }} class="block text-sm font-medium text-gray-700"> Price </label>
@@ -45,9 +45,9 @@
                                 <input type="number" min="0" max="10000.00" step="1" id="price" name="price"
                                     class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
                             </div>
-                            <!-- @error('price')
+                            @error('price')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
-                            @enderror -->
+                            @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="body" class="block text-sm font-medium text-gray-700">Description</label>
@@ -56,9 +56,9 @@
                                     class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                                     {{$menu->description}}</textarea>
                             </div>
-                            <!-- @error('description')
+                            @error('description')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
-                            @enderror -->
+                            @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="categories" class="block text-sm font-medium text-gray-700">Categories</label>
@@ -66,7 +66,7 @@
                                 <select id="categories" name="categories[]" class="form-multiselect block w-full mt-1"
                                     multiple>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}" >{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}" @selected($menu->categories->contains($category))>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
